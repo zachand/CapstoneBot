@@ -4,13 +4,20 @@ const client = new Client( // Instantiate a new client with some necessary param
     { intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }
 );
 
+function buildReply(message) {
+    
+}
+
+
 client.on('ready', function(e) {
     console.log(`Logged in as ${client.user.tag}!`)
 })
 
 client.on('messageCreate', function (msg) {
-    if (msg.content.match(/^[t|T]eam\s+\d{1,2}\s+[rfi|RFI]{3}\s+\d+:\s+?\w+\s\w+,/)) {
-        console.log("success")
+    if (msg.content.match(/^[t|T]eam\s+\d{1,2}\s+rfi\s+\d+:/i)) {
+        if (msg.content.match(/msgt\s\w+,/i)) {
+            msg.reply('noted.\n– MSgt "Sparky" Brown \n333 CES')  
+        } 
     }
 })
 
