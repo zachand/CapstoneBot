@@ -1,0 +1,26 @@
+{
+  "name": "capstonebot",
+  "version": "1.0.0",
+  "description": "a small FAQ bot to lighten workload",
+  "main": "CapstoneBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachand/CapstoneBot.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Zachary Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachand/CapstoneBot/issues"
+  },
+  "homepage": "https://github.com/zachand/CapstoneBot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  }
+}
