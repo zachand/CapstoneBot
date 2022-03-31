@@ -7,8 +7,18 @@ const client = new Client( // Instantiate a new client with some necessary param
 function buildReply(message) {
     var sendMe = ""
     if (message.content.match(/generator/i)){
-        message.reply('what do you want to know about generators?')
+        if (message.content.match(/kwh|capacity|output/i)) {
+            sendMe = sendMe.concat("Your Current Generator is rated for 1000 kWh, the New generator will be rated for 4000 kWh but won't arrive for 12 months.\n")
+        }
+        if (message.content.match(/borrow|lend|extra.+generator/i)) {
+            sendMe = sendMe.concat("We do not have a spare generator that can be borrowed.\n")
+        }
+        else {
+            sendMe = sendMe.concat("I'm not sure what you're asking here\n")
+        }
     }
+    sendMe = sendMe.concat("\nRANDY “SPARKY” BROWN, MSgt, 333 CES\nNCOIC, Electrical Engineering")
+    return sendMe
 }
 
 
@@ -19,8 +29,7 @@ client.on('ready', function(e) {
 client.on('messageCreate', function (msg) {
     if (msg.content.match(/^[t|T]eam\s+\d{1,2}\s+rfi\s+\d+:/i)) {
         if (msg.content.match(/msgt\s\w+,/i)) {
-            buildReply(msg)
-            msg.reply('noted.\n–MSgt "Sparky" Brown \n333 CES')  
+            msg.reply(buildReply(msg))  
         } 
     }
 })
