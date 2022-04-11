@@ -1,4 +1,7 @@
 require('dotenv').config()              //So that i dont have to upload the bot token to github
+//for this to work as is, you need to create a file in the same directory as this one, title it ".env"
+//within .env there should be one (1) line, and it should be:
+//TOKEN="bottokengoesherekeepthequotationmarks"
 const { Client, Intents } = require('discord.js'); // Import relevant classes from discord.js
 const client = new Client( // Instantiate a new client with some necessary parameters.
     { intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }
